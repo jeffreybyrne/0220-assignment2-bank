@@ -2,10 +2,10 @@
 # 1. Create a class called BankAccount.
 
 class BankAccount:
-    pass
 
 # 2. Add a class variable called interest_rate that is a float representing the interest rate for all the accounts in the bank.
 #   This is a class variable because it is the same value for all accounts.
+    interest_rate = 2
 # 3. Add another class variable called accounts that starts as an empty list. This will eventually store the collection of all
 #   bank accounts in the bank.
 # 4. Add an __init__() instance method that sets the bank account's balance to zero. Balance is stored in an instance variable
