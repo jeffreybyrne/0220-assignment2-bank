@@ -16,9 +16,12 @@ class BankAccount:
 
     def __init__(self):
         self.balance = 0
-        
+
 # 5. Add an instance method called deposit that accepts a number as an argument and adds that amount to the account's balance.
 #   This needs to be an instance method because it pertains to a single, specific account.
+
+    def deposit(self,amount):
+        self.balance += amount
 # 6. Add an instance method called withdraw that accepts a number as an argument and subtracts that amount from the account's
 #   balance.
 # 7. Add a class method called create that makes a new instance using BankAccount() and adds the new object to the accounts
