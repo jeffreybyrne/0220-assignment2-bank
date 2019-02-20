@@ -24,6 +24,12 @@ class BankAccount:
         self.balance += amount
 # 6. Add an instance method called withdraw that accepts a number as an argument and subtracts that amount from the account's
 #   balance.
+
+    def withdraw(self,amount):
+        if amount > self.balance:
+            print("You cannot withdraw ${:.2f}, the current balance is only ${:.2f}.".format(amount,self.balance))
+        else:
+            self.balance -= amount
 # 7. Add a class method called create that makes a new instance using BankAccount() and adds the new object to the accounts
 #   class variable so that we can find it again in the future. This method should return the new account object. This needs
 #   to be a class method because at the time we run it there is no single, specific account object that we are working on.
