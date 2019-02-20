@@ -41,9 +41,22 @@ class BankAccount:
         return account
 # 8. Add a class method called total_funds that returns the sum of all balances across all accounts in the accounts class variable.
 #   This needs to be a class method because it does not pertain to any single, specific account.
+
+    @classmethod
+    def total_funds(cls):
+        total = 0
+        for num in range(0,len(cls.accounts)):
+            total += cls.accounts[num].balance
+        return total
 # 9. Add a class method called interest_time that iterates through all accounts and increases their balances according to the
 #   class interest_rate. This needs to be a class method because it operates on all bank accounts, not a single, specific
 #   account.
 my_account = BankAccount.create()
 your_account = BankAccount.create()
 print(my_account.balance) # 0
+print(BankAccount.total_funds()) # 0
+my_account.deposit(200)
+your_account.deposit(1000)
+print(my_account.balance) # 200
+print(your_account.balance) # 1000
+print(BankAccount.total_funds()) # 1200
