@@ -33,8 +33,17 @@ class BankAccount:
 # 7. Add a class method called create that makes a new instance using BankAccount() and adds the new object to the accounts
 #   class variable so that we can find it again in the future. This method should return the new account object. This needs
 #   to be a class method because at the time we run it there is no single, specific account object that we are working on.
+
+    @classmethod
+    def create(cls):
+        account = BankAccount()
+        cls.accounts.append(account)
+        return account
 # 8. Add a class method called total_funds that returns the sum of all balances across all accounts in the accounts class variable.
 #   This needs to be a class method because it does not pertain to any single, specific account.
 # 9. Add a class method called interest_time that iterates through all accounts and increases their balances according to the
 #   class interest_rate. This needs to be a class method because it operates on all bank accounts, not a single, specific
 #   account.
+my_account = BankAccount.create()
+your_account = BankAccount.create()
+print(my_account.balance) # 0
