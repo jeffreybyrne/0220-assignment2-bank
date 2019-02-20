@@ -10,9 +10,13 @@ class BankAccount:
 # 3. Add another class variable called accounts that starts as an empty list. This will eventually store the collection of all
 #   bank accounts in the bank.
     accounts = []
-    
+
 # 4. Add an __init__() instance method that sets the bank account's balance to zero. Balance is stored in an instance variable
 #   because the value needs to be different from account to account.
+
+    def __init__(self):
+        self.balance = 0
+        
 # 5. Add an instance method called deposit that accepts a number as an argument and adds that amount to the account's balance.
 #   This needs to be an instance method because it pertains to a single, specific account.
 # 6. Add an instance method called withdraw that accepts a number as an argument and subtracts that amount from the account's
