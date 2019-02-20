@@ -5,7 +5,7 @@ class BankAccount:
 
 # 2. Add a class variable called interest_rate that is a float representing the interest rate for all the accounts in the bank.
 #   This is a class variable because it is the same value for all accounts.
-    interest_rate = 2
+    interest_rate = 1
 
 # 3. Add another class variable called accounts that starts as an empty list. This will eventually store the collection of all
 #   bank accounts in the bank.
@@ -51,6 +51,13 @@ class BankAccount:
 # 9. Add a class method called interest_time that iterates through all accounts and increases their balances according to the
 #   class interest_rate. This needs to be a class method because it operates on all bank accounts, not a single, specific
 #   account.
+
+    @classmethod
+    def interest_time(cls):
+        for num in range(0,len(cls.accounts)):
+            curr_account = cls.accounts[num]
+            curr_account.balance = curr_account.balance * (1 + curr_account.interest_rate / 100)
+
 my_account = BankAccount.create()
 your_account = BankAccount.create()
 print(my_account.balance) # 0
@@ -60,3 +67,10 @@ your_account.deposit(1000)
 print(my_account.balance) # 200
 print(your_account.balance) # 1000
 print(BankAccount.total_funds()) # 1200
+BankAccount.interest_time()
+print(my_account.balance) # 202.0
+print(your_account.balance) # 1010.0
+print(BankAccount.total_funds()) # 1212.0
+my_account.withdraw(50)
+print(my_account.balance) # 152.0
+print(BankAccount.total_funds()) # 1162.0
